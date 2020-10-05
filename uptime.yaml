@@ -1,9 +1,8 @@
 ---
 - hosts: test
   remote_user: vt250075
-#  vars: 
-#    - DATE: 'date +"%m.%d.%y"'
-#    - LOGFIE: /home/vt250075/uptime_linux_audit/audit.$DATE.log
+  vars: 
+    output: []
 
   tasks:
     - name: get hostname
@@ -17,7 +16,5 @@
       changed_when: False
       register: uptime
 
-    - debug: var={{ item }}
-      with_items:
-        - hostname.stdout
-        - uptime.stdout
+    - debug: msg={{msg="{{output | to_nice_json}}"
+    - local_action: copy content='{{output | to_nice_json}}' dest="/home/vt250075/uptime_linux_audit/audit.log"
