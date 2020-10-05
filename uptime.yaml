@@ -2,7 +2,7 @@
 - hosts: test
   remote_user: vt250075
   vars: 
-    - DATE: `date +"%m.%d.%y"`
+    - DATE: 'date +"%m.%d.%y"'
     - LOGFIE: /home/vt250075/uptime_linux_audit/audit.$DATE.log
 
   tasks:
