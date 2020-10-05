@@ -7,7 +7,7 @@
 
   tasks:
     - name: get hostname
-      shell: uname -n
+      shell: hostname
       changed_when: False
       register: hostname
 
