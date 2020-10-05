@@ -7,7 +7,7 @@
 
   tasks:
     - name: get hostname
-      command: /bin/hostname
+      command: uname -n
       changed_when: False
       register: hostname
 
