@@ -7,7 +7,7 @@
 
   tasks:
     - name: get hostname
-      shell: hostname
+      command: /bin/hostname
       changed_when: False
       register: hostname
 
